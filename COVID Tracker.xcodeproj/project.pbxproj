@@ -13,6 +13,8 @@
 		864502BC2816E4D90077A720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864502BA2816E4D90077A720 /* Main.storyboard */; };
 		864502BE2816E4DA0077A720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 864502BD2816E4DA0077A720 /* Assets.xcassets */; };
 		864502C12816E4DA0077A720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864502BF2816E4DA0077A720 /* LaunchScreen.storyboard */; };
+		864502C92816E6FD0077A720 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864502C82816E6FD0077A720 /* FilterViewController.swift */; };
+		864502CF2816E8CD0077A720 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864502CE2816E8CD0077A720 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		864502BD2816E4DA0077A720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		864502C02816E4DA0077A720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		864502C22816E4DA0077A720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		864502C82816E6FD0077A720 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		864502CE2816E8CD0077A720 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,33 @@
 		864502B32816E4D90077A720 /* COVID Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				864502B42816E4D90077A720 /* AppDelegate.swift */,
-				864502B62816E4D90077A720 /* SceneDelegate.swift */,
-				864502B82816E4D90077A720 /* ViewController.swift */,
-				864502BA2816E4D90077A720 /* Main.storyboard */,
-				864502BD2816E4DA0077A720 /* Assets.xcassets */,
-				864502BF2816E4DA0077A720 /* LaunchScreen.storyboard */,
+				864502CA2816E77D0077A720 /* Core */,
 				864502C22816E4DA0077A720 /* Info.plist */,
+				864502CB2816E7970077A720 /* Other */,
 			);
 			path = "COVID Tracker";
+			sourceTree = "<group>";
+		};
+		864502CA2816E77D0077A720 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				864502B82816E4D90077A720 /* ViewController.swift */,
+				864502C82816E6FD0077A720 /* FilterViewController.swift */,
+				864502CE2816E8CD0077A720 /* APICaller.swift */,
+				864502BA2816E4D90077A720 /* Main.storyboard */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		864502CB2816E7970077A720 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				864502BD2816E4DA0077A720 /* Assets.xcassets */,
+				864502B42816E4D90077A720 /* AppDelegate.swift */,
+				864502B62816E4D90077A720 /* SceneDelegate.swift */,
+				864502BF2816E4DA0077A720 /* LaunchScreen.storyboard */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +162,8 @@
 			files = (
 				864502B92816E4D90077A720 /* ViewController.swift in Sources */,
 				864502B52816E4D90077A720 /* AppDelegate.swift in Sources */,
+				864502C92816E6FD0077A720 /* FilterViewController.swift in Sources */,
+				864502CF2816E8CD0077A720 /* APICaller.swift in Sources */,
 				864502B72816E4D90077A720 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
