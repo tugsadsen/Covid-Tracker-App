@@ -4,10 +4,20 @@
 //
 //  Created by Tuğşad Şen on 25.04.2022.
 //
-
+import Charts
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
+    
+    static let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.groupingSeparator = ","
+        formatter.formatterBehavior = .default
+        formatter.locale = .current
+        return formatter
+    }()
+    
     
     private let tableView: UITableView =  {
         let table = UITableView(frame: .zero)
@@ -20,6 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.createGraph()
             }
         }
     }
@@ -37,6 +48,36 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+    }
+    
+    private func createGraph() {
+        let headerView = UIView(
+            frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width/1.5)
+        )
+        headerView.clipsToBounds = true
+        
+        let set = dayData.prefix(20)
+        var entries: [BarChartDataEntry] = []
+        for index in 0..<set.count {
+            let data = set[index]
+            entries.append(.init(x: Double(index), y: Double(data.count)))
+        }
+        
+        let dataSet = BarChartDataSet(
+            entries: entries
+        )
+        
+        let data: BarChartData = BarChartData(dataSet: dataSet)
+        
+        let chart = BarChartView(
+            frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width/1.5)
+        )
+        dataSet.colors = ChartColorTemplates.vordiplom()
+        chart.data = data
+        
+        headerView.addSubview(chart)
+        
+        tableView.tableHeaderView = headerView
     }
     
     private func configureTable() {
@@ -95,8 +136,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     private func createText(with data: DayData) -> String? {
         let dateString = DateFormatter.prettyFormatter.string(from: data.date)
-        
-        return "\(dateString): \(data.count)"
+        let total = Self.numberFormatter.string(from: NSNumber(value: data.count))
+        return "\(dateString): \(total ??  "\(data.count)")"
     }
 }
 

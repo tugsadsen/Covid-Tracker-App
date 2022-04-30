@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860AE97C281C4F6300D7884F /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 860AE97B281C4F6300D7884F /* Charts */; };
 		864502B52816E4D90077A720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864502B42816E4D90077A720 /* AppDelegate.swift */; };
 		864502B72816E4D90077A720 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864502B62816E4D90077A720 /* SceneDelegate.swift */; };
 		864502B92816E4D90077A720 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864502B82816E4D90077A720 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860AE97C281C4F6300D7884F /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,9 @@
 			dependencies = (
 			);
 			name = "COVID Tracker";
+			packageProductDependencies = (
+				860AE97B281C4F6300D7884F /* Charts */,
+			);
 			productName = "COVID Tracker";
 			productReference = 864502B12816E4D90077A720 /* COVID Tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 864502A82816E4D90077A720;
+			packageReferences = (
+				860AE97A281C4F6300D7884F /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 864502B22816E4D90077A720 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -384,6 +392,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		860AE97A281C4F6300D7884F /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		860AE97B281C4F6300D7884F /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 860AE97A281C4F6300D7884F /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 864502A92816E4D90077A720 /* Project object */;
 }
